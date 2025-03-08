@@ -4,7 +4,7 @@ const Step = ({ step, formData, nextStep, prevStep, handleChange, submitForm }) 
   return (
     <div className=" w-[40%] mx-auto mt-40 rounded-sm bg-gray-500">
       {step === 1 && (
-        <div>
+        <div id="step1">
           <h1 className="text-center my-5 p-2">Customer Details</h1>
           <div className="flex flex-col justify-center item-center  p-3 [&>*]:p-2 [&>*]:outline-none">
             <label>First Name:</label>
@@ -26,7 +26,7 @@ const Step = ({ step, formData, nextStep, prevStep, handleChange, submitForm }) 
       )}
 
       {step === 2 && (
-        <div>
+        <div id="step2">
           <h1 className="text-center my-5 p-2">Car Details</h1>
           <div className="flex flex-col justify-center item-center  p-3 [&>*]:p-2 [&>*]:outline-none">
             <label>Brand:</label>
@@ -46,7 +46,7 @@ const Step = ({ step, formData, nextStep, prevStep, handleChange, submitForm }) 
         </div>
       )}
       {step === 3 && (
-        <div>
+        <div id="step3">
           <h1 className="text-center my-5 p-2">Payment Details</h1>
           <div className="flex flex-col justify-center item-center  p-3 [&>*]:p-2 [&>*]:outline-none">
             <label>Cradit Card Number:</label>
