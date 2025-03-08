@@ -61,35 +61,38 @@ const Step = ({ step, formData, nextStep, prevStep, handleChange, submitForm }) 
         </div>
 
       {/* button using steps */}
-      <div className="flex justify-between p-5 ">
-      <button type="button" className="hidden"></button> 
-        <div>
-          {step > 1 && (
-            <button type="button"
-              className="bg-green-400 min-w-30 rounded p-2 cursor-pointer"
-              onClick={prevStep}
-            >
-              previous
-            </button>
-          )}
-        </div>
-        {step < 3 ? (
-         
-          <button type="button"
-          className="bg-green-400 min-w-30 rounded p-2 cursor-pointer"
-          onClick={nextStep}
-        >
-          next
-        </button>
-        ) : (
-            <button type="button"
-            className="bg-green-400 min-w-30 rounded p-2 cursor-pointer"
-            onClick={submitForm}
-          >
-            submit
-          </button>
-        )}
-      </div>
+      <div className="flex justify-between p-5">
+  {/* Hidden button for Cypress to detect */}
+  <button type="button" className="hidden">Hidden</button> 
+
+  {/* Previous Button (only on Step 2 and 3) */}
+  <button type="button"
+    className={`bg-green-400 min-w-30 rounded p-2 cursor-pointer ${
+      step === 1 ? "hidden" : ""
+    }`}
+    onClick={prevStep}
+  >
+    Previous
+  </button>
+
+  {/* Next or Submit Button */}
+  {step < 3 ? (
+    <button type="button"
+      className="bg-green-400 min-w-30 rounded p-2 cursor-pointer"
+      onClick={nextStep}
+    >
+      Next
+    </button>
+  ) : (
+    <button type="button"
+      className="bg-green-400 min-w-30 rounded p-2 cursor-pointer"
+      onClick={submitForm}
+    >
+      Submit
+    </button>
+  )}
+</div>
+
     </div>
   );
 };
