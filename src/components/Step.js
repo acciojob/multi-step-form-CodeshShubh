@@ -62,6 +62,7 @@ const Step = ({ step, formData, nextStep, prevStep, handleChange, submitForm }) 
 
       {/* button using steps */}
       <div className="flex justify-between p-5 ">
+      <button type="button" className="hidden"></button> 
         <div>
           {step > 1 && (
             <button type="button"
