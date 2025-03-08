@@ -64,7 +64,7 @@ const Step = ({ step, formData, nextStep, prevStep, handleChange, submitForm }) 
       <div className="flex justify-between p-5 ">
         <div>
           {step > 1 && (
-            <button
+            <button type="button"
               className="bg-green-400 min-w-30 rounded p-2 cursor-pointer"
               onClick={prevStep}
             >
@@ -74,14 +74,14 @@ const Step = ({ step, formData, nextStep, prevStep, handleChange, submitForm }) 
         </div>
         {step < 3 ? (
          
-          <button
+          <button type="button"
           className="bg-green-400 min-w-30 rounded p-2 cursor-pointer"
           onClick={nextStep}
         >
           next
         </button>
         ) : (
-            <button
+            <button type="button"
             className="bg-green-400 min-w-30 rounded p-2 cursor-pointer"
             onClick={submitForm}
           >
