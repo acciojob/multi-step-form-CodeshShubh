@@ -3,8 +3,7 @@ import React from "react";
 const Step = ({ step, formData, nextStep, prevStep, handleChange, submitForm }) => {
   return (
     <div className=" w-[40%] mx-auto mt-40 rounded-sm bg-gray-500">
-      {step === 1 && (
-        <div id="step1">
+        <div style={{ display: step === 1 ? "block" : "none" }} id="step1">
           <h1 className="text-center my-5 p-2">Customer Details</h1>
           <div className="flex flex-col justify-center item-center  p-3 [&>*]:p-2 [&>*]:outline-none">
             <label>First Name:</label>
@@ -23,10 +22,8 @@ const Step = ({ step, formData, nextStep, prevStep, handleChange, submitForm }) 
              />
           </div>
         </div>
-      )}
 
-      {step === 2 && (
-        <div id="step2">
+        <div style={{ display: step === 2 ? "block" : "none" }}  id="step2">
           <h1 className="text-center my-5 p-2">Car Details</h1>
           <div className="flex flex-col justify-center item-center  p-3 [&>*]:p-2 [&>*]:outline-none">
             <label>Brand:</label>
@@ -44,9 +41,7 @@ const Step = ({ step, formData, nextStep, prevStep, handleChange, submitForm }) 
             />
           </div>
         </div>
-      )}
-      {step === 3 && (
-        <div id="step3">
+        <div style={{ display: step === 3 ? "block" : "none" }} id="step3">
           <h1 className="text-center my-5 p-2">Payment Details</h1>
           <div className="flex flex-col justify-center item-center  p-3 [&>*]:p-2 [&>*]:outline-none">
             <label>Cradit Card Number:</label>
@@ -64,7 +59,6 @@ const Step = ({ step, formData, nextStep, prevStep, handleChange, submitForm }) 
             />
           </div>
         </div>
-      )}
 
       {/* button using steps */}
       <div className="flex justify-between p-5 ">
